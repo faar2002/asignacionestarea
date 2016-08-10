@@ -1,3 +1,7 @@
+ubicacion:
+    resource: "@UbicacionBundle/Resources/config/routing.yml"
+    prefix:   /
+
 user_user:
     resource: "@UserUserBundle/Resources/config/routing.yml"
     prefix:   /
@@ -5,3 +9,20 @@ user_user:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+#Autentication
+
+user_user_homepage:
+    path:     /
+    defaults: { _controller: UserUserBundle:User:home }
+    
+user_user_login:
+    path:     /login
+    defaults: { _controller: UserUserBundle:Security:login }
+    
+user_user_login_check:
+    path:     /login_check
+    defaults: { _controller: UserUserBundle:Security:loginCheck }
+
+user_user_logout:
+    path:     /logout   
