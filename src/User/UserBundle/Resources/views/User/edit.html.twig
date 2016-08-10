@@ -2,11 +2,12 @@
 
 {% block body %}
     {{ parent() }}
+    {{ include('UserUserBundle:User:messages/success.html.twig') }}
     <div class="main container">
         <div class="row well">
             <div class="col-md-6">
                 <div class="page-header">
-                    <h2>{% trans %}New User{% endtrans %}</h2>
+                    <h2>{% trans %}Edit user{% endtrans %}</h2>
                 </div>
                 {{ form_start(form, {'attr' : {'novalidate':'novalidate','role' : 'form'} }) }}
                     <div class="form-group">
@@ -52,7 +53,7 @@
                     </div>
                     </fieldset>
                     <p>
-                        {{ form_widget(form.save, {'label' : 'Create user', 'attr': {'class': 'btn btn-success'}}) }}
+                        {{ form_widget(form.save, {'label' : 'Update user', 'attr': {'class': 'btn btn-success'}}) }}
                     </p>					
                 {{ form_end(form) }}
             </div>

@@ -1,0 +1,53 @@
+user_task_index:
+    path:     /index
+    defaults: { _controller: UserUserBundle:Task:index }
+
+user_task_add:
+    path:     /add
+    defaults: { _controller: UserUserBundle:Task:add }
+
+user_task_create:
+    path:     /create
+    defaults: { _controller: UserUserBundle:Task:create }
+    methods:  POST
+
+user_task_edit:
+    path:     /edit/{id}
+    defaults: { _controller: UserUserBundle:Task:edit }
+
+user_task_update:
+    path:     /update/{id}
+    defaults: { _controller: UserUserBundle:Task:update }
+    methods:  [POST, PUT]
+
+user_task_view:
+    path:     /view/{id}
+    defaults: { _controller: UserUserBundle:Task:view }
+
+user_task_delete:
+    path:     /delete/{id}
+    defaults: { _controller: UserUserBundle:Task:delete }
+    methods:  [POST, DELETE]
+
+user_task_redirect_add:
+    path: /create
+    defaults:
+        _controller: UserUserBundle:Task:add
+        path: /add
+        permanent: true
+
+user_task_custom:
+    path:     /custom
+    defaults: { _controller: UserUserBundle:Task:custom }
+    
+user_task_process:
+    path:     /process/{id}
+    defaults: { _controller: UserUserBundle:Task:process }
+    methods:  [POST, PUT]    
+
+user_task_redirect_edit:
+    path: /update/{id}
+    defaults:
+        _controller: UserUserBundle:Task:edit
+        path: /edit/{id}
+        permanent: true

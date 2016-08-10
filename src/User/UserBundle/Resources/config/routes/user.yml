@@ -1,0 +1,54 @@
+user_user_hello:
+    path:     /hello/{name}
+    defaults: { _controller: UserUserBundle:Default:index }
+
+user_user_home:
+    path:     /
+    defaults: { _controller: UserUserBundle:User:home }
+
+user_user_index:
+    path:     /index
+    defaults: { _controller: UserUserBundle:User:index }
+
+user_user_add:
+    path:     /add
+    defaults: { _controller: UserUserBundle:User:add }
+    
+user_user_create:
+    path:     /create
+    defaults: { _controller: UserUserBundle:User:create }
+    methods: POST
+    
+user_user_edit:
+    path:     /edit/{id}
+    defaults: { _controller: UserUserBundle:User:edit }
+    
+user_user_update:
+    path:     /update/{id}
+    defaults: { _controller: UserUserBundle:User:update }
+    methods: [POST, PUT]
+    
+user_user_view:
+    path:     /view/{id}
+    defaults: { _controller: UserUserBundle:User:view }
+    
+user_user_delete:
+    path:     /delete/{id}
+    defaults: { _controller: UserUserBundle:User:delete }
+    methods: [POST, DELETE]
+    
+
+user_user_redirect_add:
+    path:   /create
+    defaults: 
+         _controller: UserUserBundle:User:add
+         path:  /add
+         parament:  true
+         
+user_user_redirect_edit:
+    path:   /update/{id}
+    defaults: 
+         _controller: UserUserBundle:User:edit
+         path:  /edit
+         parament:  true
+         

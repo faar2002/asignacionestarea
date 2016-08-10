@@ -1,28 +1,7 @@
-user_user_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: UserUserBundle:Default:index }
+user_user_user:
+    resource: "@UserUserBundle/Resources/config/routes/user.yml"
+    prefix:   /user
 
-user_user_index:
-    path:     /user/index
-    defaults: { _controller: UserUserBundle:User:index }
-
-user_user_add:
-    path:     /user/add
-    defaults: { _controller: UserUserBundle:User:add }
-    
-user_user_create:
-    path:     /user/create
-    defaults: { _controller: UserUserBundle:User:create }
-    methods: POST
-    
-user_user_edit:
-    path:     /user/edit/{id}
-    defaults: { _controller: UserUserBundle:User:edit }
-    
-user_user_view:
-    path:     /user/view/{id}
-    defaults: { _controller: UserUserBundle:User:view }
-    
-user_user_delete:
-    path:     /user/delete/{id}
-    defaults: { _controller: UserUserBundle:User:delete }
+task_task_task:
+    resource: "@UserUserBundle/Resources/config/routes/task.yml"
+    prefix:   /task
