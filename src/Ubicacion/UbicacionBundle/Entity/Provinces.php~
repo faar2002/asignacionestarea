@@ -1,0 +1,137 @@
+<?php
+
+namespace Ubicacion\UbicacionBundle\Entity;
+use Symfony\Component\Validator\Constraints as Assert;
+use Doctrine\Common\Collections\ArrayCollection;
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Provinces
+ *
+ * @ORM\Table(name="provinces")
+ * @ORM\Entity(repositoryClass="Ubicacion\UbicacionBundle\Repository\ProvincesRepository")
+ */
+class Provinces
+{
+    /**
+     * @ORM\ManyToOne(targetEntity="Region", inversedBy="provinces")
+     * @ORM\JoinColumn(name="region_id", referencedColumnName="id", onDelete="CASCADE")
+    */ 
+    protected $region;
+    
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="region_id", type="integer")
+     */
+    private $regionId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="string", length=90)
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="status", type="string", length=15)
+     */
+    private $status;
+
+    public function __construct()
+    {
+        $this->communes = new ArrayCollection();
+    }
+    
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set regionId
+     *
+     * @param integer $regionId
+     * @return Provinces
+     */
+    public function setRegionId($regionId)
+    {
+        $this->regionId = $regionId;
+
+        return $this;
+    }
+
+    /**
+     * Get regionId
+     *
+     * @return integer 
+     */
+    public function getRegionId()
+    {
+        return $this->regionId;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return Provinces
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set status
+     *
+     * @param string $status
+     * @return Provinces
+     */
+    public function setStatus($status)
+    {
+        $this->status = $status;
+
+        return $this;
+    }
+
+    /**
+     * Get status
+     *
+     * @return string 
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+}
